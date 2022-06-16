@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
+    >
+
+
+    <TextView
+        android:id="@+id/BarName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Notes"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/white"
+        android:fontFamily="serif-bold"
+        android:textSize="26dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:layout_editor_absoluteX="15dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_search"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BarName"
+        app:layout_constraintVertical_bias="0.068"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/ic_search"
+            android:tint="@color/white"
+            tools:ignore="UseAppTint" />
+
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="Search Notes"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/QuickActionLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+
+        />
+
+
+
+    <LinearLayout
+        android:id="@+id/QuickActionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E1E1E"
+        android:orientation="horizontal"
+        android:padding="16sp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/ImageaddNote"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_add"
+            android:tint="@color/white"
+            tools:ignore="UseAppTint"
+            />
+        <ImageView
+            android:id="@+id/imageadd"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_image"
+            android:layout_marginStart="15dp"
+            android:tint="@color/white"
+            tools:ignore="UseAppTint"
+
+            />
+        <ImageView
+            android:id="@+id/webadd"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_web"
+            android:layout_marginStart="15dp"
+            android:tint="@color/white"
+            tools:ignore="UseAppTint"
+
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/CreateNewNote"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_add_notebutton"
+        android:src="@drawable/ic_add_withoutcircle"
+        android:tint="@color/white"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/QuickActionLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/QuickActionLayout"
+        tools:ignore="UseAppTint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
